@@ -1,0 +1,27 @@
+# include <stdio.h>
+# include <math.h>
+
+struct ponto{
+  int ponto_1[1];
+  int ponto_2[1];
+  int subtracao_exponencial_1;
+  int subtracao_exponencial_2;
+  int potencia_1;
+  int potencia_2;
+  float resultado;
+};
+
+int main(void){
+  struct ponto p;
+  printf("Digite as coordenadas do 1º ponto: \n");
+  scanf("%d %d", &p.ponto_1[0], &p.ponto_1[1]);
+  printf("Digite as coordenadas do 2º ponto: \n");
+  scanf("%d %d", &p.ponto_2[0], &p.ponto_2[1]);
+  p.subtracao_exponencial_1 = (p.ponto_1[1] - p.ponto_1[0]);
+  p.subtracao_exponencial_2 = (p.ponto_2[1] - p.ponto_2[0]);
+  p.potencia_1 = pow(2.0, p.subtracao_exponencial_1);
+  p.potencia_2 = pow(2.0, p.subtracao_exponencial_2 );
+  p.resultado = sqrt(p.potencia_1 + p.potencia_2);
+  printf(" O tamanho do segmento é: %.1f", p.resultado);
+  return 0;
+  }
